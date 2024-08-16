@@ -1,7 +1,9 @@
 
+/*importa o css*/
 import './App.css'
 
 import CardBooks from './components/CardBooks'
+import capaLivro from './assets/livros/cavernas_aco.jpg'
 
 function App() {
   
@@ -11,15 +13,9 @@ function App() {
       <CardBooks
         titulo='Cavernas de Aço'
         autor= 'Isaac Asimov'
+        imagem={capaLivro}
       />
-      <CardBooks
-        titulo='O melhor amigo'
-        autor= 'Jose'
-      />
-      <CardBooks
-        titulo='A felicidade'
-        autor= 'Maria'
-      />
+      
       
     </>
   )
