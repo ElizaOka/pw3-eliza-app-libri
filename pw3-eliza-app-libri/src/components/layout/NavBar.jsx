@@ -14,7 +14,7 @@ const NavBar = () => {
                     <li className ={style.item}>HOME</li>
                 </Link>
 
-                <Link to ='/createBook'>
+                <Link to ='/createBooks'>
                     <li className ={style.item}>CADASTRAR LIVRO</li>
                 </Link>
 
