@@ -1,4 +1,5 @@
 import React from "react";
+import {useState, useEffect} from "react";
 import style from './CreateBooks.module.css'
 
 import Input from "../forms/Input"
@@ -7,6 +8,32 @@ import Button from "../forms/Button";
 
 
 const CreateBooks =()=>{
+    /* recupera os dados da  caegoria*/
+    useEffect(()=> {
+        fetch('http://localhost:5000/listagemCateorias',{
+            method:'GET',
+            headers:{
+                'Content-Type':'aplication/json',
+                'Access-Control-Allow-origin':'*',
+                'Access-Control-Allow-Headers':'*',
+            }
+        }).then(
+            (resp)=>
+                // consolo.log('RESPOSTA:' + resp)
+                resp.json()
+            
+        ).then(
+            (data)=>{
+                console.log('DATA: ' + data.data[0].nome_categoria)
+            }
+        ).catch(
+            (error)=>{
+                console.log(error)
+            }
+        )
+    }),[];
+
+
     return(
 
         <section className={style.create_books_container}>
