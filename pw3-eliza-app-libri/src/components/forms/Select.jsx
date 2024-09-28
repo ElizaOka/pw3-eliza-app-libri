@@ -9,6 +9,12 @@ function Select({text,name}){
                 <option>Fantasia Heroica</option>
                 <option>Suspense</option>
                 <option>Terror</option>
+                {
+                    options.map((option)=> {
+                // console.log(options.nome_categoria)
+                return<option>{option.nome_categoria}</option>
+            })
+        }
              </select>
             
         </div>
