@@ -27,6 +27,8 @@ const CreateBooks = ()=>{
         console.log(book);
 }
 
+
+
     /* RECUPERA OS DADOS DE CATEGORIAS DA APIREST */
     useEffect(()=>{
         fetch('http://localhost:5000/listagemCategorias', {
@@ -100,7 +102,7 @@ const CreateBooks = ()=>{
                     name='nome_livro'
                     placeHolder='Digite o nome do seu livro aqui'
                     text='Título do livro'
-                    handlerChangeBook={handlerChangeBook}
+                    handlerOnChangeBook={handlerChangeBook}
                 />
 
                 <Input 
@@ -108,7 +110,7 @@ const CreateBooks = ()=>{
                     name='autor_livro'
                     placeHolder='Digite o nome do autor'
                     text='Nome do autor'
-                    handlerChangeBook={handlerChangeBook}
+                    handlerOnChangeBook={handlerChangeBook}
                 />
 
                 <Input 
@@ -116,16 +118,17 @@ const CreateBooks = ()=>{
                     name='descricao_livro'
                     placeHolder='Digite a descrição do livro'
                     text='Descrição do livro'
-                    handlerChangeBook={handlerChangeBook}
+                    handlerOnChangeBook={handlerChangeBook}
                 />
 
                 <Select 
-                    name='categoria'
-                    text='Escolha uma categoria de livro'
-                    options={categorias}
-                    handleChangeCategory={handleChangeCategory}
-                />
-
+                name='Categoria'
+                text='Escolha uma categoria de livro'
+                options={categorias}
+                handleChangeCategory={handleChangeCategory}
+            />
+                    
+                
                 <Button 
                     rotulo='Cadastrar Livro'
                 />
