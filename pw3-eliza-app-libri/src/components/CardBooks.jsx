@@ -9,7 +9,7 @@ const CardBooks = ({cod_livro,titulo,autor,imagem})=>{
             <p className = {style.autor} >{autor}</p>
             <img src = {imagem} alt ={titulo} title={{titulo}}></img>
             <div>
-                <Button label= 'DETALHE'></Button>
+                <Button label= 'DETALHE' router='/DetailBooks/'cod_livro={cod_livro}></Button>
 
             </div>
             

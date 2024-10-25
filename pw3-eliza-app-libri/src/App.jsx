@@ -11,6 +11,7 @@ import Container from './components/layout/Container'
 import Home from './components/pages/Home'
 import ListBooks from './components/pages/ListBooks'
 import CreateBooks from './components/pages/CreateBooks'
+import DetailBooks from './components/pages/DetailBooks'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -28,6 +29,7 @@ function App() {
             <Route path= '/'  element ={<Home/>}/>
               <Route path='/listBook' element ={<ListBooks/>}/>
               <Route path='/createBooks' element ={<CreateBooks/>}/>
+              <Route path='/DetailBooks/:cod_livro' element ={<CreateBooks/>}/>
 
           </Route>
         </Routes>

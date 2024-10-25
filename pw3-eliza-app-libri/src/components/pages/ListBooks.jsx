@@ -55,6 +55,7 @@ const ListBooks = () => {
                                 titulo={book.nome_livro}
                                 autor={book.autor_livro}
                                 imagem={cavernas}
+                                
                                 key={book.cod_livro}
                             />
                         ))
