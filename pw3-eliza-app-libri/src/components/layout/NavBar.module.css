@@ -2,7 +2,7 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    background-color: blueviolet;
+    background-color: rgb(176, 23, 122);
     padding: 1em;
 }
 
