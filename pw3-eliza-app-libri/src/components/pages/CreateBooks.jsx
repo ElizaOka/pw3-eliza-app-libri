@@ -8,8 +8,7 @@ import Input from "../forms/Input";
 import Select from "../forms/Select";
 import Button from "../forms/Button";
 
-const CreateBooks = ()=>{
-
+const CreateBooks = () => {
     const navigate = useNavigate();
 
     /* DEFINE O STATE DE DADOS DAS CATEGORIAS */
@@ -28,27 +27,25 @@ const CreateBooks = ()=>{
     function handleChangeCategory(event) {
         setBook({...book, cod_categoria: event.target.value});
         console.log(book);
-}
+    }
 
-
-
-    /* RECUPERA OS DADOS DE CATEGORIAS DA APIREST */
+    /* RECUPERAR OS DADOS DE CAREGORIAS DA APIREST */
     useEffect(()=>{
-        fetch('http://localhost:5000/listagemCategorias', {
+        fetch('http://localhost:5000/listagemCategorias',{
             method:'GET',
             headers:{
                 'Content-Type':'application/json',
-                'Access-Control-Allow-Origin':'*',
-                'Access-Control-Allow-Headers':'*',
+                'Acess-Control-Allow-Origin':'*', // asteristico significa que pega tudo
+                'Acess-Control-Allow-Headers':'*'
             }
         }).then(
             (resp)=>
-                // console.log('RESPOSTA:' + resp)
+                // console.log("RESPOSTA: " + resp)
                 resp.json()
             
         ).then(
             (data)=>{
-                console.log('DATA: ' + data.data[0].nome_categoria)
+                console.log('DATA: ' + data.data[3].nome_categoria)
                 setCategorias(data.data)
             }
         ).catch(
@@ -56,7 +53,7 @@ const CreateBooks = ()=>{
                 console.log(error)
             }
         )
-    },[]);
+    },[])
 
     /* INSERÇÃO DOS DADOS DE LIVRO */
     function createBook(book) {
@@ -79,7 +76,7 @@ const CreateBooks = ()=>{
         .then(
                 (data)=>{
                 console.log(data);
-                navigate('/listBook',{state:'LIVRO CADASTRADO COM SUCESSO!'});
+                navigate('/listBooks',{state:'LIVRO CADASTRADO COM SUCESSO!'});
                 }
         )
         .catch(
@@ -93,54 +90,53 @@ const CreateBooks = ()=>{
         createBook(book);
     }
 
-    return(
+    return (
+
         <section className={style.create_book_container}>
-            
             <h1>CADASTRO DE LIVROS</h1>
 
             <form onSubmit={submit}>
 
-                <Input 
+                <Input
                     type='text'
                     name='nome_livro'
                     placeHolder='Digite o nome do seu livro aqui'
-                    text='Título do livro'
-                    handlerOnChangeBook={handlerChangeBook}
+                    text='Titulo do livro'
+                    handlerChangeBookProp={handlerChangeBook}
                 />
 
-                <Input 
+                <Input
                     type='text'
                     name='autor_livro'
                     placeHolder='Digite o nome do autor'
                     text='Nome do autor'
-                    handlerOnChangeBook={handlerChangeBook}
+                    handlerChangeBookProp={handlerChangeBook}
                 />
 
-                <Input 
+                <Input
                     type='text'
                     name='descricao_livro'
                     placeHolder='Digite a descrição do livro'
                     text='Descrição do livro'
-                    handlerOnChangeBook={handlerChangeBook}
+                    handlerChangeBookProp={handlerChangeBook}
                 />
 
-                <Select 
-                name='Categoria'
-                text='Escolha uma categoria de livro'
-                options={categorias}
-                handleChangeCategory={handleChangeCategory}
-            />
-                    
-                
-                <Button 
-                    rotulo='Cadastrar Livro'
+                <Select
+                    name='categoria'
+                    text='Escolha uma categoria de livro'
+                    options={categorias}
+                    handleChangeCategory={handleChangeCategory}
+                />
+
+                <Button
+                    rotulo='Cadastrar livro'
                 />
 
             </form>
 
         </section>
-    )
 
+    )
 }
 
 export default CreateBooks

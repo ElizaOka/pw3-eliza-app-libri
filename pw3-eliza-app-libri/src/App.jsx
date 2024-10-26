@@ -1,43 +1,52 @@
-
-/*importa o css*/
+/* IMPORTA O CSS */
 import './App.css'
 
-/*import CardBooks from './components/CardBooks'*/
-import NavBar from './components/layout/NavBar'
-
-/* IMPORTA O COMPONENTE DE <CONTEINER*/
+//IMPORTA O COMPONENTE CONTAINER
 import Container from './components/layout/Container'
 
-import Home from './components/pages/Home'
-import ListBooks from './components/pages/ListBooks'
-import CreateBooks from './components/pages/CreateBooks'
-import DetailBooks from './components/pages/DetailBooks'
+//IMPORTA O COMPONENTE NAVBAR
+import NavBar from './components/layout/NavBar'
 
+// IMPORTA OS COMPONENTES DE NAVEGAÇÃO DA APLICAÇÃO
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+//
+import Home from './components/pages/Home'
+
+import CreateBooks from './components/pages/CreateBooks' 
+
+import ListBooks from './components/pages/ListBooks' 
+import DeitailBook from './components/pages/DetailBook'
 
 
 function App() {
-  
-
+ 
+ 
   return (
     <>
-      {/* estrutura de navegação */}
-      <BrowserRouter>
-      <Container>
-        <Routes>
-          <Route path='/' element={<NavBar/>}>
-            <Route path= '/'  element ={<Home/>}/>
-              <Route path='/listBook' element ={<ListBooks/>}/>
-              <Route path='/createBooks' element ={<CreateBooks/>}/>
-              <Route path='/DetailBooks/:cod_livro' element ={<CreateBooks/>}/>
 
-          </Route>
-        </Routes>
-      </Container>
-      </BrowserRouter>
-      
+      {/* ESTRUTURA DE NAVEGAÇÃO */}
+        <BrowserRouter>
+
+          <Container>
+
+            <Routes>
+
+              <Route path='/' element={<NavBar />}>
+                <Route path='/' element={<Home />}/>
+                <Route path='/listBooks' element={<ListBooks />}/>
+                <Route path='/createBooks' element={<CreateBooks />}/>
+                <Route path='/DetailBook/:cod_livro' element={<DeitailBook />}/>
+              </Route>
+
+            </Routes>
+
+          </Container>
+
+        </BrowserRouter>
+
     </>
   )
 }
-
+ 
 export default App
