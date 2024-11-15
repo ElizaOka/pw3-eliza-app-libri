@@ -17,7 +17,7 @@ const ListBooks = () => {
      /* RECUPERA OS DADOS DOS LIVROS DO BACKEND */
      useEffect(()=>{
 
-    fetch('http://localhost:5000/listagemLivros', {
+    fetch('http://localhost:5000/listagemLivro', {
         method: 'GET',
         mode:'cors',
         headers:{

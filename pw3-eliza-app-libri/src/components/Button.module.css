@@ -7,5 +7,5 @@ button{
     border: 1px solid #FFF;
     border-radius: 5px;
     color: #FFF;
-    background: linear-gradient(0deg, rgb(116, 12, 142) 0%, rgb(162, 117, 160) 100%);
+    background: linear-gradient(0deg, rgba(56,174,255,1) 0%, rgba(156,199,232,1) 100%);
 }

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import style from './button.module.css'
+import style from './Button.module.css'
 
 const Button = ({label, router, cod_livro}) => {
     return(

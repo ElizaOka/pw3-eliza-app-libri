@@ -16,9 +16,12 @@ import Home from './components/pages/Home'
 import CreateBooks from './components/pages/CreateBooks' 
 
 import ListBooks from './components/pages/ListBooks' 
-import DeitailBook from './components/pages/DetailBook'
 
+import DetailBook from './components/pages/DetailBook'
 
+import DeleteBook from './components/pages/DeleteBook'
+
+import UpdateBooks from './components/pages/UpdateBooks'
 function App() {
  
  
@@ -36,14 +39,16 @@ function App() {
                 <Route path='/' element={<Home />}/>
                 <Route path='/listBooks' element={<ListBooks />}/>
                 <Route path='/createBooks' element={<CreateBooks />}/>
-                <Route path='/DetailBook/:cod_livro' element={<DeitailBook />}/>
+                <Route path='/detailBook/:cod_livro' element={<DetailBook />}/>
+                <Route path='/deleteBook/:cod_livro' element={<DeleteBook />}/>
+                <Route path='/updateBooks/:cod_livro' element={<UpdateBooks />}/>
               </Route>
 
             </Routes>
 
           </Container>
 
-        </BrowserRouter>
+        </BrowserRouter> 
 
     </>
   )
